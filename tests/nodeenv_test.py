@@ -73,8 +73,8 @@ def test_smoke(tmpdir):
     nenv_path = tmpdir.join('nenv').strpath
     subprocess.check_call([
         # Enable coverage
-        'coverage', 'run', '-p',
-        '-m', 'nodeenv', '--prebuilt', nenv_path,
+        'python3-coverage', 'run', '-p',
+        '-m', 'nodeenv', '--node=system', nenv_path,
     ])
     assert os.path.exists(nenv_path)
     subprocess.check_call([
